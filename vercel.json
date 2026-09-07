@@ -5,10 +5,7 @@
   "functions": {
     "api/index.mjs": {
       "maxDuration": 300,
-      "includeFiles": [
-        "public/**",
-        "assets/squad-2026-09-07.json"
-      ]
+      "includeFiles": "public/**"
     }
   },
   "rewrites": [
