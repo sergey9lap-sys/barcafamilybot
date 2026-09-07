@@ -51,11 +51,11 @@ export class Store {
    const rated=players.filter(p=>p.rating!==null); const participants=Number((await this.db.query('SELECT COUNT(*) AS n FROM ballots WHERE match_id=$1 AND submitted=1',[id]))[0].n);
    return {players:players.map(p=>({...p,rating:p.rating===null?null:Number(p.rating),votes:Number(p.votes)})),team: rated.length?rated.reduce((s,p)=>s+Number(p.rating),0)/rated.length:null,participants,ratedPlayers:rated.length,updatedAt:now()};
  }
- async season(season) { await this.expire(); return this.cached('season:'+season,async()=>{
+ async season(season) { await this.expire(); return this.cached('season-sum:'+season,async()=>{
    const matches=await this.db.query("SELECT id FROM matches WHERE season=$1 AND state='closed' AND demo=0 ORDER BY played_on",[season]);
    const map=new Map(),teams=[];
    for(const m of matches) { const r=await this.aggregate(m.id); if(r.team!==null) teams.push(r.team); for(const p of r.players) if(p.rating!==null) { const v=map.get(p.id)||{...p,sum:0,matches:0,votes:0}; v.sum+=p.rating; v.matches++; v.votes+=p.votes; map.set(p.id,v); } }
-   return {season,team:teams.length?teams.reduce((a,b)=>a+b,0)/teams.length:null,matches:teams.length,players:[...map.values()].map(({sum,...p})=>({...p,rating:sum/p.matches})).sort((a,b)=>b.rating-a.rating),updatedAt:now()};
+   return {season,team:teams.length?teams.reduce((a,b)=>a+b,0):null,matches:teams.length,players:[...map.values()].map(({sum,...p})=>({...p,rating:sum})).sort((a,b)=>b.rating-a.rating),updatedAt:now()};
  }); }
  async create(user,data) {
    if(!textField(data.opponent)||!textField(data.competition)||!/^\d{4}\/\d{2}$/.test(data.season)||!/^\d{4}-\d{2}-\d{2}$/.test(data.played_on)||Number.isNaN(Date.parse(data.played_on))||!/^\d{1,2}:\d{1,2}$/.test(data.score)) fail(400,'Проверь соперника, счёт (0:5), дату и сезон (2026/27).');
