@@ -6,7 +6,10 @@ import {processWebhook} from '../src/webhook.mjs';
 let ready;
 function application(){
  if(!ready) ready=(async()=>{
-   const cfg={...config({...process.env,NODE_ENV:'production',DEMO_MODE:'false',DB_POOL_SIZE:'3'}),skipSchema:true,allowTestMatches:process.env.ALLOW_TEST_MATCHES==='true'};
+   const missing=['DATABASE_URL','BOT_TOKEN','PUBLIC_URL'].filter(k=>!process.env[k]?.trim());
+   if(missing.length)throw Object.assign(new Error('Missing configuration'),{code:'CONFIG_MISSING_'+missing.join('_')});
+   if(!process.env.PUBLIC_URL.startsWith('https://'))throw Object.assign(new Error('Invalid URL'),{code:'CONFIG_PUBLIC_URL_INVALID'});
+   const cfg={...config({...process.env,NODE_ENV:'production',DEMO_MODE:'false',DB_POOL_SIZE:'3'}),skipSchema:true,allowTestMatches:process.env.ALLOW_TEST_MATCHES!=='false'};
    const app=await createApp(cfg);
    return {...app,handlers:botHandlers(app.store,new Telegram(cfg.token),cfg)};
  })().catch(e=>{ready=undefined;throw e;});
@@ -30,5 +33,5 @@ export default async function handler(req,res){
    // Vercel may have consumed the JSON stream before invoking the function.
    if(req.body!==undefined){const body=typeof req.body==='string'?req.body:JSON.stringify(req.body);req[Symbol.asyncIterator]=async function*(){yield Buffer.from(body);};}
    return app.server.listeners('request')[0](req,res);
- }catch(e){console.error('Request failed:',e.code||e.name);res.statusCode=503;res.setHeader('Retry-After','2');res.end('Please retry');}
+ }catch(e){console.error('Request failed:',e.code||(e.message?.includes('demonstration matches')?'TEST_MATCHES_DISABLED':e.message?.includes('timeout')?'DATABASE_TIMEOUT':e.name));res.statusCode=503;res.setHeader('Retry-After','2');res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify({error:'Сервис временно недоступен. Попробуй ещё раз чуть позже.'}));}
 }
