@@ -20,9 +20,9 @@ CREATE INDEX IF NOT EXISTS bot_jobs_pending ON bot_jobs(state,created_at);
 export async function openDatabase(cfg) {
   if (cfg.databaseUrl) {
     const { default: pg } = await import('pg');
-    const pool = new pg.Pool({ connectionString: cfg.databaseUrl, max: cfg.poolSize, connectionTimeoutMillis: 5000, idleTimeoutMillis: 30000, statement_timeout: 10000 });
+    const pool = new pg.Pool({ connectionString: cfg.databaseUrl, max: cfg.poolSize, connectionTimeoutMillis: 15000, idleTimeoutMillis: 30000, statement_timeout: 10000 });
     const query = async (sql, args = []) => (await pool.query(sql, args)).rows;
-    await pool.query(schema);
+    if(!cfg.skipSchema) await pool.query(schema);
     return { pg: true, query, close: () => pool.end(), transaction: async fn => { const c = await pool.connect(); try { await c.query('BEGIN'); const r = await fn({ query: async (sql, args=[]) => (await c.query(sql,args)).rows, pg: true }); await c.query('COMMIT'); return r; } catch(e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); } } };
   }
   if (cfg.sqlitePath !== ':memory:') mkdirSync(dirname(cfg.sqlitePath), { recursive: true });
@@ -34,3 +34,4 @@ export async function openDatabase(cfg) {
   const queued = fn => { const result=chain.then(fn); chain=result.catch(()=>{});return result; };
   return { pg: false, query: (sql,args=[])=>queued(()=>query(sql,args)), close: async () => {await chain;db.close();}, transaction: fn => queued(async()=>{ db.exec('BEGIN IMMEDIATE'); try { const r=await fn({query,pg:false}); db.exec('COMMIT'); return r; } catch(e) { db.exec('ROLLBACK'); throw e; } }) };
 }
+

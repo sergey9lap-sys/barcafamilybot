@@ -11,8 +11,8 @@ import { Store } from './store.mjs';
 
 const publicDir=resolve('public');
 export async function createApp(cfg) {
- const db=await openDatabase(cfg); await seed(db,cfg); const store=new Store(db);
- if(cfg.production&&(await db.query('SELECT id FROM matches WHERE demo=1 LIMIT 1')).length) throw new Error('Production must use a database without demonstration matches.');
+ const db=await openDatabase(cfg); if(!cfg.skipSchema) await seed(db,cfg); const store=new Store(db);
+ if(cfg.production&&!cfg.allowTestMatches&&(await db.query('SELECT id FROM matches WHERE demo=1 LIMIT 1')).length) throw new Error('Production must use a database without demonstration matches.');
  if(cfg.demo) await db.query("INSERT INTO admins(user_id,role) VALUES('demo-admin','admin') ON CONFLICT(user_id) DO NOTHING");
  const secret=randomBytes(32),limits=new Map();
  const sign=id=>createHmac('sha256',secret).update(id).digest('hex');
