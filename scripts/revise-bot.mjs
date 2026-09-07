@@ -1,0 +1,15 @@
+import {readFile,writeFile} from 'node:fs/promises';
+let code=await readFile('src/bot.mjs','utf8');
+code=code.replace("if(callback){await tg.call('answerCallbackQuery'", "if(callback){void tg.call('answerCallbackQuery'");
+code=code.replace("'Результаты матча':'btn_results'", "'Посмотреть результат':'btn_results','Результаты матча':'btn_results'");
+code=code.replace("const r=await store.results(id,user);return screen", "const r=await store.results(id,user),c=await store.content();return screen");
+code=code.replace("<i>Обновление результатов — до 10 секунд.</i>", "${richHtml(c.results_hint)}");
+code=code.replace("if(action==='season'){const r=await store.season(id);", "if(action==='season'){const r=await store.season(id),c=await store.content();");
+code=code.replace("<i>Каждый матч имеет одинаковый вес.</i>", "${richHtml(c.season_hint)}");
+code=code.replace("await store.save(id,user,{scores:{[p.id]:Number(score)},version:Number(version)});return player", "const b=d.ballot;if(b.version!==Number(version))return player(chat,user,mid,id,b.scores[p.id]===Number(score)?Number(arg)+1:Number(arg));await store.save(id,user,{scores:{[p.id]:Number(score)},version:Number(version)});return player");
+code=code.replace("button('Другие матчи','matches')", "button('🗓 Другие матчи','matches')");
+code=code.replace("console.error('Bot job failed:',e.telegramCode||e.code||e.name);", "console.error('Bot job failed:',e.telegramCode||e.code||e.name,e.description||'');");
+code=code.replace("if(!updates.length)continue;", "await store.setState('heartbeat',new Date().toISOString());if(!updates.length)continue;");
+await writeFile('src/bot.mjs',code);
+let tests=await readFile('test/core.test.mjs','utf8');tests=tests.replace("c.method==='editMessageCaption'", "c.method==='editMessageMedia'");await writeFile('test/core.test.mjs',tests);
+let script=await readFile('scripts/connect-bot.mjs','utf8');script=script.replace("let env=await readFile", "await tg.call('setChatMenuButton',{menu_button:cfg.publicUrl?{type:'web_app',text:'Открыть приложение',web_app:{url:cfg.publicUrl}}:{type:'commands'}});\n let env=await readFile");await writeFile('scripts/connect-bot.mjs',script);

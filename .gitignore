@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+*.log
+.impeccable/review/
+output/
+
+.vercel/
+*.sqlite*
+*.pem
+*.key
+assets/sources/

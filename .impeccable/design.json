@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-07T16:00:00Z",
+  "title": "Design System: Barca Family",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "toast",
+        "value": "0 8px 24px #0005",
+        "purpose": "Transient toast only."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1300px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "html": "<button class=\"ds-primary\">Отправить оценки →</button>",
+      "css": ".ds-primary{font:800 13px Manrope,sans-serif;min-height:52px;width:100%;padding:15px 20px;border:0;border-radius:10px;background:var(--yellow,#f4cd67);color:var(--bg,#101625)}.ds-primary:hover{background:#ffe2a0} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "html": "<button class=\"ds-secondary\">Обновить результаты</button>",
+      "css": ".ds-secondary{font:12px Manrope,sans-serif;min-height:44px;padding:10px 16px;border:1px solid var(--line,#303b51);border-radius:8px;background:transparent;color:var(--white,#f4f6fb)}.ds-secondary:hover{background:var(--panel,#171f32)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    },
+    {
+      "name": "Rating Choice",
+      "kind": "button",
+      "refersTo": "rating-selected",
+      "html": "<button class=\"ds-rating\" aria-pressed=\"true\">5</button>",
+      "css": ".ds-rating{font:800 14px Manrope,sans-serif;width:40px;min-height:44px;border:1px solid var(--yellow,#f4cd67);border-radius:8px;background:var(--yellow,#f4cd67);color:var(--bg,#101625)}.ds-rating:hover{border-color:#7388ae} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "html": "<label class=\"ds-label\">Соперник<input class=\"ds-field\" placeholder=\"Валенсия\"></label>",
+      "css": ".ds-label{font:12px Manrope,sans-serif;color:var(--white,#f4f6fb)}.ds-field{display:block;margin-top:8px;width:100%;font:13px Manrope,sans-serif;min-height:44px;padding:12px;border:1px solid var(--line,#303b51);border-radius:8px;background:var(--panel,#171f32);color:var(--white,#f4f6fb)}.ds-field::placeholder{color:var(--muted,#a8b5cc)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "html": "<nav class=\"ds-nav\"><button aria-current=\"page\">Оценить матч</button><button>Результаты</button><button>Сезон</button></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;border-bottom:1px solid var(--line,#303b51)}.ds-nav button{font:13px Manrope,sans-serif;min-height:44px;padding:0 0 17px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted,#a8b5cc)}.ds-nav button[aria-current=page]{color:var(--white,#f4f6fb);border-bottom-color:var(--yellow,#f4cd67)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    },
+    {
+      "name": "Team Result",
+      "kind": "card",
+      "html": "<div class=\"ds-result\"><span>Оценка команды</span><strong>4,25 <small>/ 5</small></strong></div>",
+      "css": ".ds-result{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px;border-radius:12px;background:var(--panel,#171f32);color:var(--white,#f4f6fb);font:700 18px Manrope,sans-serif}.ds-result strong{font-size:48px;color:var(--yellow,#f4cd67);letter-spacing:-.04em}.ds-result small{font-size:13px;color:var(--muted,#a8b5cc)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+    }
+  ]
+}

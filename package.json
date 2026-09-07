@@ -1,0 +1,16 @@
+{
+  "name": "barca-family",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.mjs",
+    "bot": "node --env-file-if-exists=.env src/bot.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "owner": "node --env-file-if-exists=.env scripts/owner.mjs",
+    "assets": "node scripts/assets.mjs",
+    "load-test": "node scripts/load-test.mjs"
+  },
+  "dependencies": { "pg": "^8.16.3", "sharp": "^0.34.3", "@fontsource-variable/manrope": "^5.2.8" }
+}
