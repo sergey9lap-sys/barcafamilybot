@@ -1,0 +1,431 @@
+{
+  "description": "Exact rectangular crops of user-supplied sheets, yellow rings retained. No generative retouching.",
+  "entries": [
+    {
+      "id": "yamal",
+      "name": "Ламин Ямаль",
+      "photo_path": "/portraits/yamal.jpg",
+      "source_file": "1.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "raphinha",
+      "name": "Рафинья",
+      "photo_path": "/portraits/raphinha.jpg",
+      "source_file": "1.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "gordon",
+      "name": "Энтони Гордон",
+      "photo_path": "/portraits/gordon.jpg",
+      "source_file": "1.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "adeyemi",
+      "name": "Карим Адейеми",
+      "photo_path": "/portraits/adeyemi.jpg",
+      "source_file": "1.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "fermin",
+      "name": "Фермин Лопес",
+      "photo_path": "/portraits/fermin.jpg",
+      "source_file": "2.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "pedri",
+      "name": "Педри",
+      "photo_path": "/portraits/pedri.jpg",
+      "source_file": "2.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "rodri",
+      "name": "Родри",
+      "photo_path": "/portraits/rodri.png",
+      "source_file": "2.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "gavi",
+      "name": "Гави",
+      "photo_path": "/portraits/gavi.jpg",
+      "source_file": "2.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "cubarsi",
+      "name": "Пау Кубарси",
+      "photo_path": "/portraits/cubarsi.jpg",
+      "source_file": "3.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "martin",
+      "name": "Жерар Мартин",
+      "photo_path": "/portraits/martin.jpg",
+      "source_file": "3.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "espart",
+      "name": "Хави Эспарт",
+      "photo_path": "/portraits/espart.png",
+      "source_file": "3.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "kounde",
+      "name": "Жюль Кунде",
+      "photo_path": "/portraits/kounde.jpg",
+      "source_file": "3.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "olmo",
+      "name": "Дани Ольмо",
+      "photo_path": "/portraits/olmo.jpg",
+      "source_file": "4.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "bernal",
+      "name": "Марк Берналь",
+      "photo_path": "/portraits/bernal.jpg",
+      "source_file": "4.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "dejong",
+      "name": "Френки де Йонг",
+      "photo_path": "/portraits/dejong.png",
+      "source_file": "4.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "eric",
+      "name": "Эрик Гарсия",
+      "photo_path": "/portraits/eric.jpg",
+      "source_file": "4.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "cancelo",
+      "name": "Жоау Канселу",
+      "photo_path": "/portraits/cancelo.jpg",
+      "source_file": "5.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "balde",
+      "name": "Алехандро Бальде",
+      "photo_path": "/portraits/balde.jpg",
+      "source_file": "5.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "christensen",
+      "name": "Андреас Кристенсен",
+      "photo_path": "/portraits/christensen.jpg",
+      "source_file": "5.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "jesus",
+      "name": "Габриэл Жезус",
+      "photo_path": "/portraits/jesus.jpg",
+      "source_file": "5.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "garcia",
+      "name": "Жоан Гарсия",
+      "photo_path": "/portraits/garcia.jpg",
+      "source_file": "6.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "hamza",
+      "name": "Хамза Абделькарим",
+      "photo_path": "/portraits/hamza.jpg",
+      "source_file": "6.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "bisiwu",
+      "name": "Джесси Бисиву",
+      "photo_path": "/portraits/bisiwu.jpg",
+      "source_file": "6.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "farinas",
+      "name": "Бриан Фариньяс",
+      "photo_path": "/portraits/farinas.jpg",
+      "source_file": "6.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "szczesny",
+      "name": "Войцех Щенсны",
+      "photo_path": "/portraits/szczesny.jpg",
+      "source_file": "7.jpg",
+      "position": "top-left",
+      "crop": {
+        "left": 77,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "livakovic",
+      "name": "Доминик Ливакович",
+      "photo_path": "/portraits/livakovic.png",
+      "source_file": "7.jpg",
+      "position": "top-right",
+      "crop": {
+        "left": 541,
+        "top": 68,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": true
+    },
+    {
+      "id": "dunkara",
+      "name": "Эбрима Дункара",
+      "photo_path": "/portraits/dunkara.jpg",
+      "source_file": "7.jpg",
+      "position": "bottom-left",
+      "crop": {
+        "left": 77,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": false
+    },
+    {
+      "id": "goren",
+      "name": "Ориен Горен",
+      "photo_path": "/portraits/goren.jpg",
+      "source_file": "7.jpg",
+      "position": "bottom-right",
+      "crop": {
+        "left": 541,
+        "top": 503,
+        "width": 410,
+        "height": 410
+      },
+      "mapping_source": "User-provided names; no face identification",
+      "in_existing_roster": false
+    }
+  ],
+  "unchanged": [
+    {
+      "id": "bardghji",
+      "reason": "No replacement supplied in user mapping"
+    }
+  ]
+}
