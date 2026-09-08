@@ -1,27 +1,29 @@
 ---
 name: Barca Family
-description: Navy and white player ratings for Barcelona supporters.
+description: Original BF4 identity on a navy supporter ratings workspace.
 colors:
   navy: "#101625"
-  panel: "#171f32"
+  identity: "#111b2c"
+  panel: "#182237"
   white: "#f4f6fb"
-  muted: "#a8b5cc"
-  line: "#303b51"
-  yellow: "#f4cd67"
-  wine: "#b9234a"
-  blue: "#3453b8"
+  muted: "#afbdd4"
+  line: "#334059"
+  blue: "#0068FF"
+  red: "#F21A41"
+  blue-hover: "#075ce0"
+  segment-selected: "#344766"
   danger: "#ffabb8"
 typography:
   display:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(56px, 6vw, 94px)"
-    fontWeight: 800
-    lineHeight: 0.94
-    letterSpacing: "-0.04em"
+    fontSize: "clamp(32px, 3.3vw, 52px)"
+    fontWeight: 700
+    lineHeight: 1.12
+    letterSpacing: "-0.035em"
   headline:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "26px"
-    lineHeight: 1.2
+    fontSize: "32px"
+    lineHeight: 1.16
     letterSpacing: "-0.035em"
   player:
     fontFamily: "Manrope, sans-serif"
@@ -34,17 +36,19 @@ rounded:
   panel: "12px"
 components:
   button-primary:
-    backgroundColor: "{colors.yellow}"
-    textColor: "{colors.navy}"
+    backgroundColor: "{colors.blue}"
+    textColor: "#ffffff"
     rounded: "{rounded.action}"
     padding: "15px 20px"
+  button-primary-hover:
+    backgroundColor: "{colors.blue-hover}"
   button-secondary:
     textColor: "{colors.white}"
     rounded: "{rounded.control}"
     padding: "10px 16px"
   rating-selected:
-    backgroundColor: "{colors.yellow}"
-    textColor: "{colors.navy}"
+    backgroundColor: "{colors.blue}"
+    textColor: "#ffffff"
     rounded: "{rounded.control}"
   field:
     backgroundColor: "{colors.panel}"
@@ -57,62 +61,71 @@ components:
 
 ## Overview
 
-The established identity is dark navy and white: bold Barca Family lettering, readable Russian copy and direct access to player ratings. Burgundy and blue are supporting club accents; yellow identifies selection, progress and the primary action.
+The established world is the navy and white Barca Family channel identity, with the original transparent BF4 logo and its exact blue and red accents. Dense, readable Russian interfaces put voting, player ratings and personal match history within direct reach. This refresh records the implemented cascade: `public/community.css` follows `public/style.css`.
 
 **Key Characteristics:**
-- Large, tightly set brand lettering alongside a compact voting workspace.
-- Real club portraits and uppercase player names.
-- Visible numeric choices and explicit saving feedback.
+- Original logo artwork, navy surfaces and blue primary actions.
+- Real club portraits and clear player names.
+- Flat, divided lists with visible numeric choices and explicit saving feedback.
 
 ## Colors
 
 ### Primary
-Yellow carries selected scores, progress, primary actions and keyboard focus. Keep navy and white dominant in the identity.
+BF4 blue carries primary actions, selected rating controls and text selection. Keep navy and white dominant across the screen.
 
 ### Secondary
-Wine and blue appear in the diagonal club bars and cover artwork.
+BF4 red underlines the active main section and accompanies blue in the diagonal identity bars and cover rails.
 
 ### Neutral
-Navy is the page background; panel is the raised tonal surface for forms and results. White is primary text, muted is supporting copy, and line separates rows and navigation. Danger identifies error text alongside a written explanation.
+Navy is the page background; identity is the desktop brand panel. Panel is the tonal surface for fields and results. White carries primary text, progress and keyboard focus; muted supports metadata, and line separates rows. Danger accompanies written errors. Segmented controls use the selected segment surface rather than the primary action fill.
+
+**The Original Brand Rule.** Preserve the exact BF4 blue and red and the original transparent artwork. The inherited CSS variable named `--yellow` now resolves to white; its name is not permission to reintroduce yellow actions.
 
 ## Typography
 
-Locally hosted variable Manrope supports Latin and Cyrillic. The brand uses the display token. Match titles are compact (18px), section headings use the headline token, and score numerals are bold with tabular figures. Player names use the player token on desktop and increase to 16px on mobile; names are supplied in uppercase. Supporting role labels are small (10–11px). Native Telegram messages and buttons use Telegram typography.
+Locally hosted variable Manrope supports Latin and Cyrillic. The display token describes the identity headline, not the logo, which is an image. Main community headings are 32px, reducing to 29px on mobile; voting headings are 26px and 25px respectively. Match titles are 18px on desktop and 17px on mobile. Voting player names use the player token and become 16px on mobile. Standings names are 15px, reducing to 14px on mobile. Bold tabular numerals keep scores aligned. Supporting role labels are 10–12px. Native Telegram surfaces retain Telegram typography.
 
 ## Layout
 
-The desktop shell is capped at 1600px, with a sticky full-height identity panel and a voting column. At 1000px and below, the identity column narrows to 310px and rating controls move below the player identity. At 700px and below, the identity panel disappears; the single column is capped at 540px with 20px side padding and a compact wordmark.
+At 1100px and wider, the shell is capped at 1500px with a 32% identity column (minimum 280px) and a flexible workspace. The sticky full-height identity panel has 48px by 36px padding; the workspace has 48px side padding. Voting rows align a 64px portrait, identity and rating controls horizontally.
 
-Voting rows use 64px square portraits, names and positions, followed by five equal rating controls. Mobile rating controls span the row and are 45px tall. The submit dock sticks to the bottom, includes safe-area padding and displays saving status. The content editor uses labelled fields, a message selector and a multiline text area.
+From 701px through 1099px, the identity panel disappears and the shell becomes a single column capped at 850px with 40px workspace side padding. The compact original logo appears in the header. Voting rows keep portrait, name and five 44px-wide controls on one row, with 5px gaps.
+
+At 700px and below, the shell is capped at 600px with 20px side padding. The general header is 82px tall. Voting portraits remain 64px; the five rating controls move below the identity and fill the row, with 8px gaps and 48px height. Filters wrap into two columns; summaries stack, and history actions move below the match. Standings and roster portraits reduce to 44px. Roster edit actions sit below the player identity.
+
+The mobile voting view has a deliberately smaller 66px header, 44px navigation targets, 12px spacing after navigation, compact match/deadline blocks and 14px vertical player-row padding. Its sticky submit dock has 10px top padding and 10px plus safe-area bottom padding, a 48px minimum primary button, and hides the secondary dock note. Other views retain the general spacing. The navigation sticks at the top and can scroll horizontally; the submit dock sticks at the bottom without obscuring safe-area controls.
 
 ## Elevation & Depth
 
-The interface relies on tonal panels and thin dividers. The only explicit shadow is the transient toast (0 8px 24px #0005). Primary actions and rating buttons are flat. State updates do not use decorative transitions; reduced-motion CSS disables transitions and smooth scrolling. Selection requests Telegram haptic feedback when available.
+Tonal panels and thin dividers establish depth. The toast alone uses an explicit shadow (0 8px 24px #0005). Actions and rating buttons are flat. State updates have no decorative transitions; reduced-motion rules disable transitions and smooth scrolling. Telegram haptic feedback, when available, accompanies selection.
 
 ## Shapes
 
-Controls and player portraits use gently rounded corners. Primary actions and toasts have slightly softer corners; results and confirmation panels use the panel radius. Profile and success marks are circular. Most ordinary buttons have a minimum height of 44px; small inline reset and back controls are more compact.
+Fields, rating buttons and voting portraits use the control radius. Primary actions, segments, the personal ranking summary and toasts use the action radius; results and confirmation panels use the panel radius. Segmented buttons and small standings portraits use 7px corners. Profile and success marks are circular. Ordinary actions have at least 44px targets; inline back/reset controls are smaller.
 
 ## Components
 
-**Voting controls.** Five labelled choices from 1 to 5; the selected score uses yellow with navy text and a pressed state. Hover adds a blue-grey surface and lighter border. Keyboard focus uses a 3px yellow outline with 4px offset. A textual count accompanies the thin progress line. Users can remove a rating or skip a player.
+**Main navigation.** Three public sections: “Голосовать”, “Рейтинги”, “Мои матчи”. The active section has a red underline and white label. “Управление” appears for administrators. Subsections and metrics use tonal segmented controls with explicit pressed states.
 
-**Saving feedback.** Selection updates immediately while a background queue saves. Failed saves retain choices and show “Есть несохранённые оценки”, with explicit “Сохранить мои изменения” and “Загрузить сохранённые оценки” actions. Navigation and submission wait for pending saves. Do not imply a failed save succeeded.
+**Voting controls and saving.** Five labelled choices from 1 to 5 use blue with white text when selected. Hover adds a blue-grey surface and a light blue border. Keyboard focus is a 3px white outline with 4px offset. A numeric count accompanies the thin white progress line. Users can remove or skip scores. Saving feedback distinguishes pending, saved and failed changes; recovery controls must not imply a failed save succeeded.
 
-**Navigation and forms.** Underlined active navigation uses yellow; inactive labels use muted text. Inputs and selects use panel backgrounds and thin borders. Primary actions are full-width yellow; secondary actions are outlined. Disabled buttons reduce opacity. Error notices, empty states and confirmation panels explain the state in Russian.
+**Player ratings.** “Игроки” and “Зрители” switch rating audiences. Player filters expose season, tournament, whole season, last 30/90 days or explicit dates. A divided team summary displays average and total; “Средняя” and “Сумма” change player ranking order. Rows pair rank, portrait, name, match/vote counts and the chosen metric. Include update text, manual refresh and provisional/finished status. Missing data displays a dash or an explained empty state.
 
-**Bot cover and player media.** The authored cover at `public/bot-banner.png` reads “ОЦЕНКИ ИГРОКОВ” / “ПОСЛЕ МАТЧЕЙ БАРСЕЛОНЫ”, with a small Barca Family mark and five rating choices. Individual player steps use that player's real portrait through Telegram media replacement, with uppercase names, progress and native inline controls. The generic cover is not repeated as every player's image.
+**Viewer ranking and history.** Viewer rows show participation totals, with the current user identified in text and by a tonal row; a personal-position panel sits above. “Мои матчи” provides all/current/finished segments, dates, tournament, voting progress and context-specific actions. The displayed participation explanation counts one submitted ballot per match and excludes test matches; production enforcement belongs to the backend.
 
-**Editable bot copy.** Use short Russian action labels and moderate, purposeful emoji. Administrators can edit messages and button labels. The web editor handles text and ordinary emoji; changing rich text there removes its formatting entities, with an explicit warning. Telegram editing supports formatting and custom emoji data. Native Telegram visual performance and the account's premium/custom-emoji entitlement remain unverified; do not document these as guaranteed.
+**Forms and roster editor.** Labelled fields use panel backgrounds and thin borders. Primary actions are blue; secondary actions are outlined. Disabled actions reduce opacity. The roster search matches name or number, and editing exposes name, number, position and active membership. Archiving is explained as preserving history. Failed or unavailable saves receive explicit feedback rather than a success state.
 
-The accepted review disposition covers these revisions only; it does not establish a broader native Telegram validation.
+**Logo and covers.** Use `public/brand-original.png` transparently over navy, without redrawing or recoloring. The desktop logo viewport is 260 × 76px and the compact viewport 174 × 48px, cropping the original square asset. The seven 1200 × 600 covers in `public/covers/index.html` share this logo, navy, blue/red bottom rails, large white Manrope headings and restrained line symbols. `public/covers/manifest.json` names the home, personal scores, match result, player ranking, viewer ranking, history and management assets and their exact copy. Preserve that copy rather than adding slogans. Individual player steps use the player's portrait, not a repeated generic cover.
+
+**Preview and integration states.** Local `?preview=1` fixtures are illustrative and visibly marked. The new frontend has loading, empty, retry and unavailable states; it is not evidence of completed production statistics, history or roster APIs. Those Go endpoints belong to the backend developer. Native Telegram rich-text/custom-emoji behavior remains a separate validation concern.
 
 ## Do's and Don'ts
 
-- Do preserve the dark navy and white Barca Family identity.
-- Do use real club portraits and clear uppercase player names.
-- Do retain explicit selection, progress and saving feedback.
-- Do keep native Telegram controls and concise editable Russian labels.
-- Don't add slogans to the cover or replace the approved cover wording.
-- Don't repeat the generic banner for every player.
-- Don't add decorative motion or promise unverified Telegram behavior.
+- Do preserve the navy channel world, exact BF4 accents and original transparent logo.
+- Do use real club portraits, readable names and explicit numeric labels.
+- Do retain clear selection, loading, empty, unavailable and saving states.
+- Do preserve compact mobile voting headers and safe-area submit spacing.
+- Don't restore yellow primary actions or replace the logo with typeset text.
+- Don't repeat a generic banner for every player or add cover slogans.
+- Don't present preview fixtures or unverified backend/Telegram behavior as production guarantees.
+- Don't add decorative motion.

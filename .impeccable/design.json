@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T16:00:00Z",
+  "generatedAt": "2026-09-09T00:00:00Z",
   "title": "Design System: Barca Family",
   "extensions": {
     "shadows": [
@@ -13,12 +13,12 @@
     "motion": [],
     "breakpoints": [
       {
-        "name": "wide",
-        "value": "1300px"
+        "name": "desktop",
+        "value": "1100px"
       },
       {
-        "name": "compact-desktop",
-        "value": "1000px"
+        "name": "tablet",
+        "value": "701px–1099px"
       },
       {
         "name": "mobile",
@@ -32,40 +32,74 @@
       "kind": "button",
       "refersTo": "button-primary",
       "html": "<button class=\"ds-primary\">Отправить оценки →</button>",
-      "css": ".ds-primary{font:800 13px Manrope,sans-serif;min-height:52px;width:100%;padding:15px 20px;border:0;border-radius:10px;background:var(--yellow,#f4cd67);color:var(--bg,#101625)}.ds-primary:hover{background:#ffe2a0} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "css": ".ds-primary{font:800 13px Manrope,sans-serif;min-height:52px;width:100%;padding:15px 20px;border:0;border-radius:10px;background:var(--blue,#0068FF);color:white}.ds-primary:hover{background:#075ce0}.ds-primary:focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}.ds-primary:disabled{opacity:.5;cursor:wait}"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
       "html": "<button class=\"ds-secondary\">Обновить результаты</button>",
-      "css": ".ds-secondary{font:12px Manrope,sans-serif;min-height:44px;padding:10px 16px;border:1px solid var(--line,#303b51);border-radius:8px;background:transparent;color:var(--white,#f4f6fb)}.ds-secondary:hover{background:var(--panel,#171f32)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "css": ".ds-secondary{font:12px Manrope,sans-serif;min-height:44px;padding:10px 16px;border:1px solid var(--line,#334059);border-radius:8px;background:transparent;color:var(--white,#f4f6fb)}.ds-secondary:hover{background:var(--panel,#182237)} :is(button,input):focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}"
     },
     {
       "name": "Rating Choice",
       "kind": "button",
       "refersTo": "rating-selected",
       "html": "<button class=\"ds-rating\" aria-pressed=\"true\">5</button>",
-      "css": ".ds-rating{font:800 14px Manrope,sans-serif;width:40px;min-height:44px;border:1px solid var(--yellow,#f4cd67);border-radius:8px;background:var(--yellow,#f4cd67);color:var(--bg,#101625)}.ds-rating:hover{border-color:#7388ae} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "css": ".ds-rating{font:800 14px Manrope,sans-serif;width:44px;min-height:48px;border:1px solid var(--blue,#0068FF);border-radius:8px;background:var(--blue,#0068FF);color:white}.ds-rating:hover{border-color:#75a9ff}.ds-rating:focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}"
     },
     {
       "name": "Text Field",
       "kind": "input",
       "refersTo": "field",
       "html": "<label class=\"ds-label\">Соперник<input class=\"ds-field\" placeholder=\"Валенсия\"></label>",
-      "css": ".ds-label{font:12px Manrope,sans-serif;color:var(--white,#f4f6fb)}.ds-field{display:block;margin-top:8px;width:100%;font:13px Manrope,sans-serif;min-height:44px;padding:12px;border:1px solid var(--line,#303b51);border-radius:8px;background:var(--panel,#171f32);color:var(--white,#f4f6fb)}.ds-field::placeholder{color:var(--muted,#a8b5cc)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "css": ".ds-label{font:12px Manrope,sans-serif;color:var(--white,#f4f6fb)}.ds-field{display:block;margin-top:8px;width:100%;font:13px Manrope,sans-serif;min-height:44px;padding:12px;border:1px solid var(--line,#334059);border-radius:8px;background:var(--panel,#182237);color:var(--white,#f4f6fb)}.ds-field::placeholder{color:var(--muted,#afbdd4)} :is(button,input):focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
-      "html": "<nav class=\"ds-nav\"><button aria-current=\"page\">Оценить матч</button><button>Результаты</button><button>Сезон</button></nav>",
-      "css": ".ds-nav{display:flex;gap:24px;border-bottom:1px solid var(--line,#303b51)}.ds-nav button{font:13px Manrope,sans-serif;min-height:44px;padding:0 0 17px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted,#a8b5cc)}.ds-nav button[aria-current=page]{color:var(--white,#f4f6fb);border-bottom-color:var(--yellow,#f4cd67)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "html": "<nav class=\"ds-nav\"><button aria-current=\"page\">Голосовать</button><button>Рейтинги</button><button>Мои матчи</button></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;overflow-x:auto;border-bottom:1px solid var(--line,#334059);background:var(--bg,#101625)}.ds-nav button{font:14px Manrope,sans-serif;min-height:48px;white-space:nowrap;padding:0 0 17px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted,#afbdd4)}.ds-nav button[aria-current=page]{color:white;border-bottom-color:var(--wine,#F21A41)}.ds-nav button:hover{color:white}.ds-nav button:focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}"
     },
     {
       "name": "Team Result",
       "kind": "card",
       "html": "<div class=\"ds-result\"><span>Оценка команды</span><strong>4,25 <small>/ 5</small></strong></div>",
-      "css": ".ds-result{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px;border-radius:12px;background:var(--panel,#171f32);color:var(--white,#f4f6fb);font:700 18px Manrope,sans-serif}.ds-result strong{font-size:48px;color:var(--yellow,#f4cd67);letter-spacing:-.04em}.ds-result small{font-size:13px;color:var(--muted,#a8b5cc)} button:focus-visible,input:focus-visible,button.ds-primary:focus-visible,button.ds-secondary:focus-visible,button.ds-rating:focus-visible{outline:3px solid var(--yellow,#f4cd67);outline-offset:4px}"
+      "css": ".ds-result{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px;border-radius:12px;background:var(--panel,#182237);color:var(--white,#f4f6fb);font:700 18px Manrope,sans-serif}.ds-result strong{font-size:48px;color:var(--white,#f4f6fb);letter-spacing:-.04em}.ds-result small{font-size:13px;color:var(--muted,#afbdd4)} :is(button,input):focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}"
+    },
+    {
+      "html": "<div class=\"ds-segments\"><button aria-pressed=\"true\">Средняя</button><button aria-pressed=\"false\">Сумма</button></div>",
+      "kind": "nav",
+      "css": ".ds-segments{display:flex;gap:4px;background:var(--panel,#182237);padding:4px;border-radius:10px;width:fit-content}.ds-segments button{font:13px Manrope,sans-serif;min-height:44px;padding:10px 16px;border:0;border-radius:7px;background:transparent;color:var(--muted,#afbdd4)}.ds-segments button[aria-pressed=true]{background:#344766;color:white}.ds-segments button:hover{color:white}.ds-segments button:focus-visible{outline:3px solid var(--white,#f4f6fb);outline-offset:4px}",
+      "name": "Rating Segments",
+      "description": "Audience, metric or history-status selection."
     }
-  ]
+  ],
+  "narrative": {
+    "donts": [
+      "Don't restore yellow primary actions or replace the logo with typeset text.",
+      "Don't repeat a generic banner for every player or add cover slogans.",
+      "Don't present preview fixtures or unverified backend/Telegram behavior as production guarantees.",
+      "Don't add decorative motion."
+    ],
+    "dos": [
+      "Do preserve the navy channel world, exact BF4 accents and original transparent logo.",
+      "Do use real club portraits, readable names and explicit numeric labels.",
+      "Do retain clear selection, loading, empty, unavailable and saving states.",
+      "Do preserve compact mobile voting headers and safe-area submit spacing."
+    ],
+    "rules": [
+      {
+        "body": "Preserve the exact BF4 blue and red and the original transparent artwork. The inherited CSS variable named `--yellow` now resolves to white; its name is not permission to reintroduce yellow actions.",
+        "section": "colors",
+        "name": "The Original Brand Rule"
+      }
+    ],
+    "keyCharacteristics": [
+      "Original logo artwork, navy surfaces and blue primary actions.",
+      "Real club portraits and clear player names.",
+      "Flat, divided lists with visible numeric choices and explicit saving feedback."
+    ],
+    "overview": "The established world is the navy and white Barca Family channel identity, with the original transparent BF4 logo and its exact blue and red accents. Dense, readable Russian interfaces put voting, player ratings and personal match history within direct reach. This refresh records the implemented cascade: `public/community.css` follows `public/style.css`."
+  }
 }
