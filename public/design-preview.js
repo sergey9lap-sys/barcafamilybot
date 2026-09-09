@@ -1,4 +1,4 @@
-// Explicit localhost-only design preview. Never used as a fallback for API failures.
+// Explicit demonstration mode. Never used as a fallback for API failures.
 export function designPreview(){
  const names=[['garcia','Жоан Гарсия',1],['kounde','Жюль Кунде',23],['cubarsi','Пау Кубарси',5],['eric','Эрик Гарсия',24],['balde','Алехандро Бальде',3],['rodri','Родри',16],['pedri','Педри',8],['fermin','Фермин Лопес',7],['yamal','Ламин Ямаль',10],['raphinha','Рафинья',11],['gordon','Энтони Гордон',17],['dejong','Френки де Йонг',21],['olmo','Дани Ольмо',20],['gavi','Гави',6],['martin','Жерар Мартин',18],['jesus','Габриэл Жезус',9]];
  let role=sessionStorage.getItem('previewRole')||'voter';const players=names.map(([id,name,number],i)=>({id,name,number,role:i===0?'Вратарь':i<5?'Защитник':i<10?'Полузащитник':'Нападающий',photo_path:'/portraits/'+id+(['rodri','dejong'].includes(id)?'.png':'.jpg'),active:1}));

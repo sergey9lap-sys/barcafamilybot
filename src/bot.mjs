@@ -58,7 +58,7 @@ export function botHandlers(store,tg,cfg) {
    const list=await store.matches(),m=list.find(x=>x.id===id)||list.find(x=>x.state==='open')||list[0],admin=await store.role(user)!=='voter';
    const c=await store.content();
    if(!m)return screen(chat,messageId,'<b>BARCA FAMILY</b>\n\n'+richHtml(c.no_matches),admin?[[button('Управление матчами','admin')]]:[]);
-   const keys=[[button(m.state==='open'?'Оценить здесь · 1–5':'Результаты матча',m.state==='open'?`p|${m.id}|0`:`r|${m.id}`)]];if(appButton(m.id).length)keys.push(appButton(m.id));keys.push([button('Мои оценки',`mine|${m.id}`),button('Рейтинг сезона',`season|${m.season}`)]);if(list.length>1)keys.push([button('🗓 Другие матчи','matches')]);if(admin)keys.push([button('Управление матчами','admin')]);
+   const keys=[[button(m.state==='open'?'Оценить здесь · 1–5':'Результаты матча',m.state==='open'?`p|${m.id}|0`:`r|${m.id}`)]];if(appButton(m.id).length)keys.push(appButton(m.id));if(m.demo&&cfg.publicUrl)keys.push([{text:'Демонстрация рейтингов',web_app:{url:cfg.publicUrl+'/?showcase=1'}}]);keys.push([button('Мои оценки',`mine|${m.id}`),button('Рейтинг сезона',`season|${m.season}`)]);if(list.length>1)keys.push([button('🗓 Другие матчи','matches')]);if(admin)keys.push([button('Управление матчами','admin')]);
    return screen(chat,messageId,`<b>${esc(m.opponent)} ${esc(m.score)} Барселона</b>\n${esc(m.competition)} · ${esc(m.played_on)}\n\n${richHtml(c.intro)}${m.demo?'\n\n<i>Тестовое голосование.</i>':''}`,keys);
  }
  async function player(chat,user,messageId,id,index) {
