@@ -17,7 +17,7 @@
   "season": {
     "file": "/covers/season.png",
     "title": "РЕЙТИНГ ИГРОКОВ",
-    "subtitle": "Средняя оценка и баллы за сезон"
+    "subtitle": "Средняя оценка за сезон"
   },
   "viewers": {
     "file": "/covers/viewers.png",
@@ -26,7 +26,7 @@
   },
   "history": {
     "file": "/covers/history.png",
-    "title": "МОИ МАТЧИ",
+    "title": "ВЫБОР МАТЧА",
     "subtitle": "Текущие и прошлые голосования"
   },
   "admin": {
