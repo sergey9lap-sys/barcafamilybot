@@ -1,0 +1,37 @@
+{
+  "home": {
+    "file": "/covers/home.png",
+    "title": "ОЦЕНКИ ИГРОКОВ",
+    "subtitle": "После матчей Барселоны"
+  },
+  "mine": {
+    "file": "/covers/mine.png",
+    "title": "МОИ ОЦЕНКИ",
+    "subtitle": "Твой выбор в этом матче"
+  },
+  "results": {
+    "file": "/covers/results.png",
+    "title": "РЕЗУЛЬТАТ МАТЧА",
+    "subtitle": "Как болельщики оценили игру"
+  },
+  "season": {
+    "file": "/covers/season.png",
+    "title": "РЕЙТИНГ ИГРОКОВ",
+    "subtitle": "Средняя оценка и баллы за сезон"
+  },
+  "viewers": {
+    "file": "/covers/viewers.png",
+    "title": "РЕЙТИНГ ЗРИТЕЛЕЙ",
+    "subtitle": "Участие в голосованиях"
+  },
+  "history": {
+    "file": "/covers/history.png",
+    "title": "МОИ МАТЧИ",
+    "subtitle": "Текущие и прошлые голосования"
+  },
+  "admin": {
+    "file": "/covers/admin.png",
+    "title": "УПРАВЛЕНИЕ",
+    "subtitle": "Матчи, составы и настройки"
+  }
+}
