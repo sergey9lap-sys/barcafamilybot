@@ -13,3 +13,9 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 @media(max-width:700px){.workspace[data-view="vote"] .topbar{height:66px}.workspace[data-view="vote"] .demo-bar{padding:9px 10px;font-size:10px;margin-bottom:8px}.workspace[data-view="vote"] .navigation{padding-top:0;margin-bottom:12px}.workspace[data-view="vote"] .navigation button{min-height:44px;padding-bottom:10px}.workspace[data-view="vote"] .match-strip{margin-top:12px;padding:12px 0}.workspace[data-view="vote"] .voting-deadline{padding:10px 0;margin-top:10px;gap:4px}.workspace[data-view="vote"] .voting-deadline span{font-size:11px}.workspace[data-view="vote"] .match-results-link{margin-top:6px;min-height:32px}.workspace[data-view="vote"] .section-intro{margin-top:16px;margin-bottom:10px}.workspace[data-view="vote"] .section-intro h2{font-size:25px}.workspace[data-view="vote"] .scale-hint{margin:12px 0 0}.workspace[data-view="vote"] .player-row{padding:14px 0}.workspace[data-view="vote"] .submit-dock{padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}.workspace[data-view="vote"] .dock-note{display:none}.workspace[data-view="vote"] .primary{min-height:48px}.workspace[data-view="vote"] #content>p.match-meta{margin:6px 0;font-size:10px}}
+.submit-dock .saving{margin-bottom:12px;line-height:1.5}
+.rating-filters label{min-width:0}
+.rating-filters input,.rating-filters select{box-sizing:border-box;width:100%;min-width:0;max-width:100%;height:48px;min-height:48px}
+.rating-filters input[type=month],.rating-filters input[type=date]{appearance:none;-webkit-appearance:none;text-align:left}
+.rating-filters input::-webkit-date-and-time-value{min-width:0;text-align:left}
+.rating-filters button[type=submit]{height:48px;min-height:48px}
