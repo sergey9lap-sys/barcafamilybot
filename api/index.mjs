@@ -25,7 +25,7 @@ export default async function handler(req,res){
      if(update===undefined){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536){res.statusCode=413;return res.end();}}update=raw;}
      if(typeof update==='string'){try{update=JSON.parse(update);}catch{res.statusCode=400;return res.end();}}
      if(!update||!Number.isSafeInteger(update.update_id)){res.statusCode=400;return res.end();}
-     if(process.env.BOT_PRESENTATION_MODE!=='false'){
+     if(process.env.BOT_PRESENTATION_MODE!=='false' && /^\/start(?:@\w+)?(?:\s|$)/.test(update.message?.text||'')){
        const message=update.message||update.callback_query?.message;
        if(message?.chat?.type==='private'){
          const telegram=new Telegram(process.env.BOT_TOKEN);
