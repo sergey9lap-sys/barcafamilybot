@@ -43,3 +43,6 @@ button:disabled{cursor:default}button:disabled:active{transform:none}
 .leader .podium-medal,.leader.first .podium-medal{mix-blend-mode:normal;opacity:1;border-radius:50%;width:40px;height:40px;top:-22px;object-fit:cover;background:#fff}.leader.first .podium-medal{width:44px;height:44px;top:-24px}.filters select{appearance:none;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%2712%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27m3 4 3 3 3-3%27 fill=%27none%27 stroke=%27%236c6b73%27 stroke-width=%271.5%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
 
 img[src$="laliga-mark.svg"]{background:transparent!important;border:0!important;box-shadow:none!important;mix-blend-mode:normal!important;filter:none!important}
+
+/* Keep the voting action after the players, never over them. */
+.send{position:static;bottom:auto;margin-top:24px;padding:18px 0;background:transparent}.shell{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}.download-results{display:block;width:100%;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:24px;font-weight:600}@media(max-width:700px){.dark .shell:before{top:30vh;top:30svh;right:-210px;width:590px;height:540px;opacity:.065}}
