@@ -25,6 +25,15 @@ export default async function handler(req,res){
      if(update===undefined){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536){res.statusCode=413;return res.end();}}update=raw;}
      if(typeof update==='string'){try{update=JSON.parse(update);}catch{res.statusCode=400;return res.end();}}
      if(!update||!Number.isSafeInteger(update.update_id)){res.statusCode=400;return res.end();}
+     if(process.env.BOT_PRESENTATION_MODE!=='false'){
+       const message=update.message||update.callback_query?.message;
+       if(message?.chat?.type==='private'){
+         const telegram=new Telegram(process.env.BOT_TOKEN);
+         if(update.callback_query)await telegram.call('answerCallbackQuery',{callback_query_id:update.callback_query.id});
+         await telegram.call('sendMessage',{chat_id:message.chat.id,text:'⚽ BARCA FAMILY\n\nОценивай игроков и смотри, кого болельщики выбирают лучшим.\n\nСейчас здесь демонстрация нового мини-приложения: матчи, оценки и рейтинг сезона. Данные в нём — для примера.',reply_markup:{inline_keyboard:[[{text:'Открыть мини-приложение',web_app:{url:'https://barcafamilybot.vercel.app/showcase/'}}]]}});
+       }
+       res.statusCode=200;return res.end('ok');
+     }
      const app=await application();
      await processWebhook(app.db,app.handlers,update);
      res.statusCode=200;return res.end('ok');
