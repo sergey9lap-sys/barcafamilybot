@@ -46,3 +46,6 @@ img[src$="laliga-mark.svg"]{background:transparent!important;border:0!important;
 
 /* Keep the voting action after the players, never over them. */
 .send{position:static;bottom:auto;margin-top:24px;padding:18px 0;background:transparent}.shell{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}.download-results{display:block;width:100%;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:24px;font-weight:600}@media(max-width:700px){.dark .shell:before{top:30vh;top:30svh;right:-210px;width:590px;height:540px;opacity:.065}}
+
+/* Original supplied La Liga mark. White pixels blend away on light surfaces. */
+img[src$="laliga-mark.png"]{border:0!important;box-shadow:none!important;background:transparent!important;mix-blend-mode:multiply!important;filter:none!important}.send{position:static!important;inset:auto!important;display:block;width:100%;max-width:none;margin:24px 0 0;padding:18px 0}.send #send{display:block;position:static;width:100%;max-width:none;min-height:54px;padding:16px 12px;box-sizing:border-box;white-space:normal}.send p{margin-top:12px}
